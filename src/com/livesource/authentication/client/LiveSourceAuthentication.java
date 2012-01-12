@@ -12,5 +12,21 @@ public class LiveSourceAuthentication implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 	
+		final String authenticationCode = Location.getParameter("code");
+		final String error = Location.getParameter("error_reason");
+
+		if (null != error && error.equals("user_denied")) {
+
+			RootPanel.get().add(new LoginGithubButton());
+
+		} else if (authenticationCode == null || "".equals(authenticationCode)) {
+
+			RootPanel.get().add(new LoginGithubButton());
+
+		} else {
+
+			GithubLoginVerifyer.authenticate(authenticationCode);
+
+		}
 	}
 }
