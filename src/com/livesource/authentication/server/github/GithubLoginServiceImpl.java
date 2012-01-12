@@ -22,7 +22,9 @@ public class GithubLoginServiceImpl extends RemoteServiceServlet implements
 		
 		if (authenticationToken!= null && authenticationToken.contains("authToken=")) {
 			
-			GithubAPI.userEmails(authenticationToken);
+			String userEmail = GithubAPI.userEmails(authenticationToken);
+
+			LiveSourcUserAPI.getUserEmail(userEmail);
 		}
 		
 		return "";
