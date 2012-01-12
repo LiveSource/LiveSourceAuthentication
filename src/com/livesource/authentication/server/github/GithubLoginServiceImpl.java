@@ -2,11 +2,12 @@ package com.livesource.authentication.server.github;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.livesource.authentication.client.github.GithubLoginService;
+import com.livesource.authentication.server.LiveSourcUserAPI;
 import com.livesource.authentication.server.URLUtil;
 
 public class GithubLoginServiceImpl extends RemoteServiceServlet implements
 		GithubLoginService {
-	
+
 	public static final String SECRET_github = "8e8ae6b7cb786bc8734f3e493d403ae7f3e6d5c0";
 	public static final String APPLICATION_ID_github = "51ae1237beba4135e83f";
 	public static final String GITHUB_URL = "https://github.com/login/oauth/authorize";
@@ -14,23 +15,23 @@ public class GithubLoginServiceImpl extends RemoteServiceServlet implements
 
 	public static final String REDIRECT_URL = "http://127.0.0.1:8888/ProjectnectionWeb.html?gwt.codesvr=127.0.0.1:9997";
 
-
 	public String githubLogin(final String authenticationCode) {
 
-		final String url = getAccessTokenUrlGithub(URLUtil.encode(authenticationCode));
+		final String url = getAccessTokenUrlGithub(URLUtil
+				.encode(authenticationCode));
 		String authenticationToken = URLUtil.fetchURL(url);
-		
-		if (authenticationToken!= null && authenticationToken.contains("authToken=")) {
-			
+
+		if (authenticationToken != null
+				&& authenticationToken.contains("authToken=")) {
+
 			String userEmail = GithubAPI.userEmails(authenticationToken);
 
 			LiveSourcUserAPI.getUserEmail(userEmail);
 		}
-		
+
 		return "";
 	}
 
-	
 	public static String getAccessTokenUrlGithub(final String authCode) {
 
 		final StringBuilder sb = new StringBuilder(github_OAUTH_URL);
@@ -42,7 +43,5 @@ public class GithubLoginServiceImpl extends RemoteServiceServlet implements
 
 		return sb.toString();
 	}
-
-
 
 }
