@@ -21,7 +21,7 @@ public class LoginGithubButton extends Image {
 
 				String githubID_localhost = "51ae1237beba4135e83f";
 
-				String url = "https://github.com/login/oauth/authorize?client_id="
+				String url = "https://github.com/login/oauth/authorize?scope=user,public_repo,email,emails&client_id="
 						+ githubID_localhost;
 
 				redirect(url);

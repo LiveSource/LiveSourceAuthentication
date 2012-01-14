@@ -26,7 +26,7 @@ public class GithubAPIServiceImpl extends RemoteServiceServlet implements
 		
 		if (authenticationToken!= null && authenticationToken.contains("access_token=")) {
 			
-			String userEmail = GithubAPI.userEmails(authenticationToken);
+			String userEmail = GithubAPI.me(authenticationToken);
 
 			LiveSourcUserAPI.getUserEmail(userEmail);
 		}
