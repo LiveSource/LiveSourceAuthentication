@@ -8,7 +8,7 @@
   <!-- Servlets -->
   <servlet>
     <servlet-name>githubAPIServlet</servlet-name>
-    <servlet-class>com.livesource.authentication.server.GithubAPIServiceImpl</servlet-class>
+    <servlet-class>com.livesource.authentication.server.github.GithubAPIServiceImpl</servlet-class>
   </servlet>
   
   <servlet-mapping>

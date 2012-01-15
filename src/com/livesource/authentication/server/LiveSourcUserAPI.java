@@ -1,17 +1,33 @@
 package com.livesource.authentication.server;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LiveSourcUserAPI {
 
-	private static final long serialVersionUID = -1721063626421257378L;
-
 	private static String getUserEmailUrl = "http://jsonpfy.projectnection.appspot.com/ListDataService"
-			+ "?kind=Entity&filterField=email";
+			+ "?kind=Entity&filterField=githubLogin&filterValue=";
 
-	public static String getUserEmail(final String userEmail) {
+	public static String getLivesourceUser(final String githubLogin) {
 
-		final String json = URLUtil.fetchURL(getUserEmailUrl + "&filterValue="
-				+ userEmail);
+		String livesourceUser = null;
 
-		return json;
+		final String jsonString = URLUtil.fetchURL(getUserEmailUrl
+				+ githubLogin);
+
+		try {
+			JSONArray json = new JSONArray(jsonString);
+
+			JSONObject user = (JSONObject) json.get(0);
+
+			livesourceUser = user.getString("ID");
+
+		} catch (JSONException e) {
+
+			e.printStackTrace();
+		}
+
+		return livesourceUser;
 	}
 }
