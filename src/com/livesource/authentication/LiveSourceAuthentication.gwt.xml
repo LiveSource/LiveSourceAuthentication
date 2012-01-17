@@ -14,7 +14,7 @@
   <!-- Other module inherits                                      -->
 
   <!-- Specify the app entry point class.                         -->
-  <entry-point class='com.livesource.authentication.client.LiveSourceAuthentication'/>
+  <!-- entry-point class='com.livesource.authentication.client.LiveSourceAuthentication'/-->
 
   <!-- Specify the paths for translatable code                    -->
   <source path='client'/>
