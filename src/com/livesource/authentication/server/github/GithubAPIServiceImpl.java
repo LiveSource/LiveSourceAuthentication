@@ -22,6 +22,8 @@ public class GithubAPIServiceImpl extends RemoteServiceServlet implements
 
 			livesourceUser = LiveSourcUserAPI
 					.getLivesourceUser(githubUserLogin);
+			
+			//GithubAPI.sourceFiles(authenticationToken, githubUserLogin, "TravelLog");
 		}
 
 		return livesourceUser;

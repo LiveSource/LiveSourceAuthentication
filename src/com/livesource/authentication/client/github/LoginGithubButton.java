@@ -7,6 +7,10 @@ import com.google.gwt.user.client.ui.Image;
 
 public class LoginGithubButton extends Image {
 
+	// private static final String githubID = "0fc5843521cee3e10e06";
+
+	private static final String githubID = "51ae1237beba4135e83f"; // _localhost
+
 	public LoginGithubButton() {
 
 		this.setUrl(GWT.getModuleName()
@@ -16,10 +20,6 @@ public class LoginGithubButton extends Image {
 
 			@Override
 			public void onClick(ClickEvent event) {
-
-				String githubID = "0fc5843521cee3e10e06";
-
-				String githubID_localhost = "51ae1237beba4135e83f";
 
 				String url = "https://github.com/login/oauth/authorize?scope=user,public_repo,email,emails&client_id="
 						+ githubID;

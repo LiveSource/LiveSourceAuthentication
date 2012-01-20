@@ -11,10 +11,12 @@ public class GithubAPI {
 
 	private static final String userEmailsURL = "https://api.github.com/user/emails";
 
+	private static final String reposURL = "https://api.github.com/repos/";
+
 	public static String me(final String authToken) {
 
 		String login = null;
-		
+
 		// {"type":"User","public_gists":0,"html_url":"https://github.com/allineo",
 		// "created_at":"2011-03-24T18:45:16Z","email":null,"bio":null,"total_private_repos":0,"private_gists":0,
 		// "public_repos":7,"url":"https://api.github.com/users/allineo","login":"allineo",
@@ -25,12 +27,12 @@ public class GithubAPI {
 		// "disk_usage":33988,"name":"Alline Watkins","location":"San Diego, CA","id":688892,"company":"LiveSource","hireable":false}
 
 		final String jsonString = URLUtil.fetchURL(userURL + "?" + authToken);
-		
+
 		try {
 			JSONObject json = new JSONObject(jsonString);
-			
+
 			login = json.getString("login");
-			
+
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
@@ -42,7 +44,15 @@ public class GithubAPI {
 
 		final String json = URLUtil.fetchURL(userEmailsURL + "?" + authToken);
 
-		// final FBFriends fbFriends = new Gson().fromJson(json, );
+		return json;
+	}
+
+	public static String sourceFiles(final String authToken,
+			final String githubUser, final String githubRepository) {
+
+		final String json = URLUtil.fetchURL(reposURL + githubUser + "/"
+				+ githubRepository + "/git/trees/master?recursive=1"
+				+ authToken);
 
 		return json;
 	}
