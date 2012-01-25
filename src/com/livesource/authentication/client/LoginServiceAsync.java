@@ -1,11 +1,11 @@
-package com.livesource.authentication.client.github;
+package com.livesource.authentication.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 /**
  * The async counterpart of <code>GreetingService</code>.
  */
-public interface GithubAPIServiceAsync {
+public interface LoginServiceAsync {
 
 	void githubLogin(String authenticationCode, AsyncCallback<String> callback);
 }

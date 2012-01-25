@@ -4,7 +4,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class LiveSourcUserAPI {
+public class LiveSourceUserAPI {
 
 	private static String getUserEmailUrl = "http://jsonpfy.projectnection.appspot.com/ListDataService"
 			+ "?kind=Entity&filterField=githubLogin&filterValue=";

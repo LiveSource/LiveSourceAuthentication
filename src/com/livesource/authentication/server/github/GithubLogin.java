@@ -15,7 +15,10 @@ public class GithubLogin {
 	private static final String GITHUB_URL = "https://github.com/login/oauth/authorize";
 	private static final String github_OAUTH_URL = "https://github.com/login/oauth/access_token";
 
-	private static final String REDIRECT_URL = "http://127.0.0.1:8888/LiveSourceAuthentication.html?gwt.codesvr=127.0.0.1:9997"; // Testing
+	private static final String REDIRECT_URL = "http://127.0.0.1:8888/ProjectnectionWeb.html?gwt.codesvr=127.0.0.1:9997"; // Testing
+	// private static final String REDIRECT_URL =
+	// "http://127.0.0.1:8888/LiveSourceAuthentication.html?gwt.codesvr=127.0.0.1:9997";
+	// // Testing
 	// private static final String REDIRECT_URL = "http://www.golivesource.com";
 
 	public static String login(final String authenticationCode) {

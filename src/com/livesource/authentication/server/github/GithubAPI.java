@@ -51,7 +51,7 @@ public class GithubAPI {
 			final String githubUser, final String githubRepository) {
 
 		final String json = URLUtil.fetchURL(reposURL + githubUser + "/"
-				+ githubRepository + "/git/trees/master?recursive=1"
+				+ githubRepository + "/git/trees/master?recursive=1&"
 				+ authToken);
 
 		return json;
