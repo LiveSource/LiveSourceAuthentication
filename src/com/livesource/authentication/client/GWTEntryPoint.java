@@ -8,8 +8,10 @@ import com.livesource.authentication.client.github.LoginGithubButton;
 
 /**
  * Entry point classes define <code>onModuleLoad()</code>.
+ * 
+ * @Architecture
  */
-public class LiveSourceAuthentication implements EntryPoint {
+public class GWTEntryPoint implements EntryPoint {
 
 	/**
 	 * This is the entry point method.

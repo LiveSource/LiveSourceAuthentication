@@ -1,4 +1,4 @@
-package com.livesource.authentication.client;
+package com.livesource.authentication.client.Utilities;
 
 import com.google.gwt.json.client.JSONValue;
 

@@ -5,10 +5,10 @@ import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.json.client.JSONParser;
 import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.livesource.authentication.client.ConvertJson;
-import com.livesource.authentication.client.EncryptText;
 import com.livesource.authentication.client.LoginService;
 import com.livesource.authentication.client.LoginServiceAsync;
+import com.livesource.authentication.client.Utilities.ConvertJson;
+import com.livesource.authentication.client.Utilities.EncryptText;
 
 public class GithubLoginVerifyer {
 

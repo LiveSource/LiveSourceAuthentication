@@ -7,7 +7,7 @@ import com.google.gwt.user.client.ui.Image;
 
 public class LoginGithubButton extends Image {
 
-	// private static final String githubID = "0fc5843521cee3e10e06";
+	//private static final String githubID = "0fc5843521cee3e10e06";
 
 	private static final String githubID = "51ae1237beba4135e83f"; // _localhost
 

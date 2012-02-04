@@ -1,4 +1,4 @@
-package com.livesource.authentication.client;
+package com.livesource.authentication.client.Utilities;
 
 import com.googlecode.gwt.crypto.bouncycastle.DataLengthException;
 import com.googlecode.gwt.crypto.bouncycastle.InvalidCipherTextException;
