@@ -13,9 +13,9 @@ public class GithubAPI {
 
 	private static final String reposURL = "https://api.github.com/repos/";
 
-	public static String me(final String authToken) {
+	public static JSONObject me(final String authToken) {
 
-		String login = null;
+		JSONObject json = new JSONObject();
 
 		// {"type":"User","public_gists":0,"html_url":"https://github.com/allineo",
 		// "created_at":"2011-03-24T18:45:16Z","email":null,"bio":null,"total_private_repos":0,"private_gists":0,
@@ -29,15 +29,13 @@ public class GithubAPI {
 		final String jsonString = URLUtil.fetchURL(userURL + "?" + authToken);
 
 		try {
-			JSONObject json = new JSONObject(jsonString);
-
-			login = json.getString("login");
+			json = new JSONObject(jsonString);
 
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
 
-		return login;
+		return json;
 	}
 
 	public static String userEmails(final String authToken) {
