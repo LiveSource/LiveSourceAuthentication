@@ -3,6 +3,7 @@ package com.livesource.authentication.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.Window.Location;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.livesource.authentication.client.facebook.LoginWithFacebookButton;
 import com.livesource.authentication.client.github.GithubLoginVerifyer;
 import com.livesource.authentication.client.github.LoginGithubButton;
 
@@ -27,12 +28,19 @@ public class GWTEntryPoint implements EntryPoint {
 
 		} else if (authenticationCode == null || "".equals(authenticationCode)) {
 
+			RootPanel.get().add(new LoginWithFacebookButton());
+			
 			RootPanel.get().add(new LoginGithubButton());
 
 		} else {
 
-			GithubLoginVerifyer.authenticate(authenticationCode);
+			final String loginApp = Location.getParameter("login");
 
+			if ("facebook".equals(loginApp)) {
+
+			} else {
+				GithubLoginVerifyer.authenticate(authenticationCode);
+			}
 		}
 	}
 }

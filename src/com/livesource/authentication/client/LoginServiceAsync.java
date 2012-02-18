@@ -8,4 +8,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 public interface LoginServiceAsync {
 
 	void githubLogin(String authenticationCode, AsyncCallback<String> callback);
+
+	void facebookLogin(String authenticationCode, AsyncCallback<String> callback);
 }

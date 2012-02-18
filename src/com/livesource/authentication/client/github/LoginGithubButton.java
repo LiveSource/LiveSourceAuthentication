@@ -21,7 +21,7 @@ public class LoginGithubButton extends Image {
 			@Override
 			public void onClick(ClickEvent event) {
 
-				String url = "https://github.com/login/oauth/authorize?scope=user,public_repo,email,emails&client_id="
+				String url = "https://github.com/login/oauth/authorize?scope=user,repo,repos,public_repo,all_repo,email,emails&client_id="
 						+ githubID;
 
 				redirect(url);

@@ -8,5 +8,8 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
  */
 @RemoteServiceRelativePath("livesourceAuthentication")
 public interface LoginService extends RemoteService {
+	
 	public String githubLogin(String authenticationCode);
+	
+	public String facebookLogin(String authenticationCode);
 }
